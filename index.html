@@ -297,23 +297,25 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 <a href="tel:+375257604717">📞 +375 33 621 22 29</a>
 <br>
 </section>
+<script>
+    var t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t)
+            window.goatcounter.visit_count({append: 'body'})
+        }
+    }, 100)
+</script>
+<script data-goatcounter="https://nareisi2.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  
 <footer>
 © 2026 Дом отдыха в Нарейшах
-<span> class="goatcounter-counter">i</span>  
 <script>
-  window.goatcounter= {
-    done: function() {
-      var elements = document.querySelectorAll('goatcounter-counter');
-      for (var = i =0; i < elements.lenght; i++) {
-        elements[i].innerText = goatcounter.count;
-      }
-    }
-  }
-    </script
-<script 
-    data-goatcounter="https://nareisi2.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js">
+    // Append to the <body>; can use a CSS selector to append somewhere else.
+    window.goatcounter.visit_count({append: 'body'})
 </script>
+<script data-goatcounter="https://nareisi2.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
   
 </footer>
 
