@@ -299,13 +299,17 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 </section>
 <footer>
 © 2026 Дом отдыха в Нарейшах
+<span> class="goatcounter-counter"></span>  
 <script>
-    // Append to the <body>; can use a CSS selector to append somewhere else.
-    window.goatcounter.visit_count({append: 'body'})
-</script>
-<script data-goatcounter="https://nareisi2.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js">
-  </script>
+  window.goatcounter= {
+    done: function() {
+      var elements = document.querySelectorAll('goatcounter-count');
+      for (var = i =0; i <elements.lenght; i++) {
+        elements[i].innerText = goatcounter.count;
+      }
+    }
+  }
+    </script
 </footer>
 
 <div class="social-buttons">
