@@ -159,10 +159,38 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 .n1{right:0;bottom:0}.n2{right:65px;bottom:15px}.n3{right:115px;bottom:55px}.n4{right:130px;bottom:120px}.n5{right:95px;bottom:180px}
 
 .feature-item{margin-bottom:12px}
+#welcome-message{
+    max-width:900px;
+    margin:25px auto;
+    padding:18px;
+    background:linear-gradient(135deg,#f4fff4,#eef9ff);
+    border-left:6px solid #4A7B67;
+    border-radius:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#1b4332;
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+}
+  
 </style>
 </head>
 
 <body>
+<div id="welcome-message"></div>
+<script>
+const messages=[
+"🌲 Спасибо Вам за посещение Нарейш!",
+"🦌 Сегодня есть шанс увидеть косулю!",
+"🏞 Голубые озёра ждут Вас!",
+"🍄 Лес уже приготовил грибы и ягоды!",
+"🥾 Самое время отправиться на экотропу!",
+"🌅 Не пропустите сегодняшний закат!",
+"🔥 Мангал уже ждёт гостей!",
+"💨 Здесь воздух чище, чем в городе!"
+];
+document.getElementById('welcome-message').innerHTML=messages[Math.floor(Math.random()*messages.length)];
+</script>
 
 <section class="hero">
 <div>
