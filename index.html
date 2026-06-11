@@ -150,19 +150,45 @@ padding:20px;
 .lightbox{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;
 background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20px}
 .lightbox img{max-width:95%;max-height:95%;border-radius:12px}
-
-.network-menu{position:fixed;right:20px;bottom:20px;z-index:9999}
-.main-network-btn{width:80px;height:80px;border-radius:50%;background:#1b4332;color:#fff;border:none;cursor:pointer;font-weight:bold}
-.network-icons{display:none;position:absolute;right:0;bottom:90px}
-.network-icons.show{display:block}
-.network-icons a{position:absolute;width:55px;height:55px;border-radius:50%;background:#4A7B67;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold}
-.n1{right:0;bottom:0}.n2{right:65px;bottom:15px}.n3{right:115px;bottom:55px}.n4{right:130px;bottom:120px}.n5{right:95px;bottom:180px}
-
+.social-buttons{position:fixed;right:15px;bottom:15px;display:flex;flex-direction:column;gap:10px;z-index:999}
+.social-buttons a{text-decoration:none;background:#1b4332;color:#fff;padding:10px 14px;border-radius:25px}
 .feature-item{margin-bottom:12px}
+
+
+#welcome-message{
+    max-width:900px;
+    margin:25px auto;
+    padding:18px;
+    background:linear-gradient(135deg,#f4fff4,#eef9ff);
+    border-left:6px solid #4A7B67;
+    border-radius:15px;
+    text-align:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#1b4332;
+    box-shadow:0 5px 15px rgba(0,0,0,0.12);
+}
+
 </style>
 </head>
 
 <body>
+
+<div id="welcome-message"></div>
+<script>
+const messages=[
+"🌲 Спасибо Вам за посещение Нарейш!",
+"🦌 Сегодня есть шанс увидеть косулю!",
+"🏞 Голубые озёра ждут Вас!",
+"🍄 Лес уже приготовил грибы и ягоды!",
+"🥾 Самое время отправиться на экотропу!",
+"🌅 Не пропустите сегодняшний закат!",
+"🔥 Мангал уже ждёт гостей!",
+"💨 Здесь воздух чище, чем в городе!"
+];
+document.getElementById('welcome-message').innerHTML=messages[Math.floor(Math.random()*messages.length)];
+</script>
+
 
 <section class="hero">
 <div>
@@ -201,23 +227,14 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 <div class="feature-item">
 <div class="card" onclick="toggleBlock('mangal')">🔥 Мангал и отдых во дворе</div>
 <div id="mangal" class="hidden-block">
-<img src="img/mangal.jpg" onclick="openLightbox(this.src)">
+<img src="img/mangal.png" onclick="openLightbox(this.src)">
 <p>Мангал, отдых во дворе и уютные вечера.</p>
-</div>
-  
-</div>
-<div class="feature-item">
-<div class="card" onclick="toggleBlock('cac')">🔥 Качели и отдых во дворе</div>
-<div id="cac" class="hidden-block">
-<img src="img/cac.jpg" onclick="openLightbox(this.src)">
-<p>Качели и отдых во дворе.</p>
 </div>
 </div>
 
 <div class="feature-item">
 <div class="card" onclick="toggleBlock('comfort')">🚿 Все удобства</div>
 <div id="comfort" class="hidden-block">
-<center>
 <h3>Все удобства</h3>
 <div class="comfort-grid">
 <div>• Холодильник</div><div>• Утюг и доска</div>
@@ -225,7 +242,6 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 <div>• Электрочайник</div><div>• Микроволновка</div>
 <div>• Душевая кабина</div><div>• Стиральная машина</div>
 </div>
-</center>
 </div>
 </div>
 
@@ -243,48 +259,25 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 </div>
 </section>
 
-
 <section class="section">
-<h2>Фотографии</h2>
-
-<div class="feature-item">
-<div class="card" onclick="toggleBlock('zal')">🛋 Зал</div>
-<div id="zal" class="hidden-block">
+<h2>Фотогалерея</h2>
 <div class="gallery">
 <img onclick="openLightbox(this.src)" src="img/zal1.jpg">
 <img onclick="openLightbox(this.src)" src="img/zal2.jpg">
+<img onclick="openLightbox(this.src)" src="img/zal3.jpg">
+<img onclick="openLightbox(this.src)" src="img/zal4.jpg">
+<img onclick="openLightbox(this.src)" src="img/zal5.jpg">
+<img onclick="openLightbox(this.src)" src="img/zal6.jpg">
 </div>
-</div>
-</div>
-
-<div class="feature-item">
-<div class="card" onclick="toggleBlock('kuhnya')">🍳 Кухня</div>
-<div id="kuhnya" class="hidden-block">
-<div class="gallery">
-<img onclick="openLightbox(this.src)" src="img/eda1.jpg">
-<img onclick="openLightbox(this.src)" src="img/eda2.jpg">
-</div>
-</div>
-</div>
-
-<div class="feature-item">
-<div class="card" onclick="toggleBlock('spalnya')">🛏 Спальня</div>
-<div id="spalnya" class="hidden-block">
-<div class="gallery">
-<img onclick="openLightbox(this.src)" src="img/son1.jpg">
-<img onclick="openLightbox(this.src)" src="img/son2.jpg">
-</div>
-</div>
-</div>
-
 <h2><a href="https://docs.google.com/spreadsheets/d/1gq0VIC0kG_pn_67CX1oQgDPAefY0ss5fIcETbQBAMYo/edit?usp=sharing">📅 Календарь бронирования</a></h2>
 <h2>Стоимость проживания</h2>
 <center>
 
 <div class="price-card">
-<div class="price-row"><span>Сутки</span><strong>160 руб.</strong></div>
-<div class="price-row"><span>Выходные</span><strong>200 руб.</strong></div>
-<div class="price-row discount"><span>При заселении от 7 дней</span><strong>скидка</strong></div>
+<div class="price-row"><span>Будни</span><strong>120 руб.</strong></div>
+<div class="price-row"><span>Пятница</span><strong>140 руб.</strong></div>
+<div class="price-row"><span>Суббота</span><strong>160 руб.</strong></div>
+<div class="price-row discount"><span>От 3 суток</span><strong>Скидка</strong></div>
 </div>
 
 </center>
@@ -300,31 +293,23 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 <a href="tel:+375257604717">📞 +375 25 760 47 17</a>
 <br>
 <a href="tel:+375257604717">📞 +375 33 621 22 29</a>
-<br>
-</br>
- <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Farendarest.github.io%2Farenda%2F&label=&icon=github&color=%230a3622&message=&style=flat&tz=UTC">
 </section>
-  
 <footer>
 © 2026 Дом отдыха в Нарейшах
 </footer>
 
-
-<div class="network-menu">
-<button class="main-network-btn" onclick="toggleNetworks()">Мы в<br>сетях</button>
-<div id="networkIcons" class="network-icons">
-<a class="n1" href="https://wa.me/375257604717">WHA</a>
-<a class="n2" href="viber://chat?number=%2B375257604717">VIB</a>
-<a class="n3" href="https://t.me/NikolayShastsilouski">TEL</a>
-<a class="n4" href="#">VKK</a>
-<a class="n5" href="#">INS</a>
+<div class="social-buttons">
+<a href="https://wa.me/375257604717">WhatsApp</a>
+<a href="viber://chat?number=%2B375257604717">Viber</a>
+<a href="https://t.me/NikolayShastsilouski">Telegram</a>
 </div>
-</div>
-
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
 <img id="lightboxImg" src="">
 </div>
+
+
+
 <script>
 function toggleBlock(id){
 const el=document.getElementById(id);
@@ -336,9 +321,6 @@ document.getElementById('lightboxImg').src=src;
 }
 function closeLightbox(){
 document.getElementById('lightbox').style.display='none';
-}
-function toggleNetworks(){
-document.getElementById('networkIcons').classList.toggle('show');
 }
 </script>
 </body>
