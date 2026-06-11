@@ -150,8 +150,14 @@ padding:20px;
 .lightbox{display:none;position:fixed;z-index:9999;left:0;top:0;width:100%;height:100%;
 background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20px}
 .lightbox img{max-width:95%;max-height:95%;border-radius:12px}
-.social-buttons{position:fixed;right:15px;bottom:15px;display:flex;flex-direction:column;gap:10px;z-index:999}
-.social-buttons a{text-decoration:none;background:#4A7B67;color:#fff;padding:10px 14px;border-radius:25px}
+
+.network-menu{position:fixed;right:20px;bottom:20px;z-index:9999}
+.main-network-btn{width:80px;height:80px;border-radius:50%;background:#1b4332;color:#fff;border:none;cursor:pointer;font-weight:bold}
+.network-icons{display:none;position:absolute;right:0;bottom:90px}
+.network-icons.show{display:block}
+.network-icons a{position:absolute;width:55px;height:55px;border-radius:50%;background:#4A7B67;color:#fff;text-decoration:none;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:bold}
+.n1{right:0;bottom:0}.n2{right:65px;bottom:15px}.n3{right:115px;bottom:55px}.n4{right:130px;bottom:120px}.n5{right:95px;bottom:180px}
+
 .feature-item{margin-bottom:12px}
 </style>
 </head>
@@ -296,18 +302,25 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
 <a href="tel:+375257604717">📞 +375 33 621 22 29</a>
 <br>
 </br>
-  <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Farendarest.github.io%2Farenda%2F&label=&icon=github&color=%230a3622&message=&style=flat&tz=UTC">
+ <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Farendarest.github.io%2Farenda%2F&label=&icon=github&color=%230a3622&message=&style=flat&tz=UTC">
 </section>
   
 <footer>
 © 2026 Дом отдыха в Нарейшах
 </footer>
 
-<div class="social-buttons">
-<a href="https://wa.me/375257604717">WhatsApp</a>
-<a href="viber://chat?number=%2B375257604717">Viber</a>
-<a href="https://t.me/NikolayShastsilouski">Telegram</a>
+
+<div class="network-menu">
+<button class="main-network-btn" onclick="toggleNetworks()">Мы в<br>сетях</button>
+<div id="networkIcons" class="network-icons">
+<a class="n1" href="https://wa.me/375257604717">WHA</a>
+<a class="n2" href="viber://chat?number=%2B375257604717">VIB</a>
+<a class="n3" href="https://t.me/NikolayShastsilouski">TEL</a>
+<a class="n4" href="#">VKK</a>
+<a class="n5" href="#">INS</a>
 </div>
+</div>
+
 
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
 <img id="lightboxImg" src="">
@@ -323,6 +336,9 @@ document.getElementById('lightboxImg').src=src;
 }
 function closeLightbox(){
 document.getElementById('lightbox').style.display='none';
+}
+function toggleNetworks(){
+document.getElementById('networkIcons').classList.toggle('show');
 }
 </script>
 </body>
