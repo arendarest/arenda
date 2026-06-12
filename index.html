@@ -172,7 +172,22 @@ background:rgba(0,0,0,.92);justify-content:center;align-items:center;padding:20p
     color:#1b4332;
     box-shadow:0 5px 15px rgba(0,0,0,0.12);
 }
-  
+
+.network-icons a{
+    position:absolute;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    overflow:hidden;
+    padding:0;
+    background:white;
+}
+
+.network-icons a img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}    
 </style>
 </head>
 
@@ -342,10 +357,27 @@ document.getElementById('welcome-message').innerHTML=messages[Math.floor(Math.ra
 <div class="network-menu">
 <button class="main-network-btn" onclick="toggleNetworks()">Мы в<br>сетях</button>
 <div id="networkIcons" class="network-icons">
-<a class="n1" href="https://wa.me/375257604717">WHA</a>
-<a class="n2" href="viber://chat?number=%2B375257604717">VIB</a>
-<a class="n3" href="https://t.me/NikolayShastsilouski">TEL</a>
-<a class="n4" href="https://www.instagram.com/spva.by?gsh=MWY1eTVsbGRzZDJseQ==">INS</a>
+
+<a class="n1" href="https://wa.me/375257604717">
+    <img src="img/whatsapp.jpg"
+         onerror="this.src='img/whatsapp.png'">
+</a>
+
+<a class="n2" href="viber://chat?number=%2B375257604717">
+    <img src="img/viber.jpg"
+         onerror="this.src='img/viber.png'">
+</a>
+
+<a class="n3" href="https://t.me/NikolayShastsilouski">
+    <img src="img/telegram.jpg"
+         onerror="this.src='img/telegram.png'">
+</a>
+
+<a class="n4" href="https://www.instagram.com/spva.by?gsh=MWY1eTVsbGRzZDJseQ==">
+    <img src="img/instagram.jpg"
+         onerror="this.src='img/instagram.png'">
+</a>
+
 </div>
 </div>
 
